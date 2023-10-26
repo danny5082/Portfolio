@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" data-chartjs-nosource></script>
+
+    <style>
+        /* 사용자 정의 스타일 유지 */
+        header {
+            background-color: #374d9a;
+            /* 배경색 변경 */
+            color: #fff;
+            /* 글자색 변경 */
+            padding: 20px;
+            /* 여백 추가 */
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            /* 원하는 글꼴로 변경 */
+            font-size: 36px;
+            /* 글자 크기 변경 */
+            text-align: center;
+            /* 가운데 정렬 */
+            text-transform: uppercase;
+            /* 글자 대문자 변환 */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            /* 링크 색상 변경 */
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            /* Flexbox 레이아웃 사용 */
+            justify-content: center;
+            /* 좌우 중앙 정렬 */
+        }
+
+        .left {
+            width: 50%;
+            /* 좌측 영역 50% 너비 할당 */
+            padding: 20px;
+            /* 여백 설정 */
+            /* 추가적인 스타일링 */
+        }
+
+        .right {
+            width: 50%;
+            /* 우측 영역 50% 너비 할당 */
+            padding: 20px;
+            /* 여백 설정 */
+            /* 추가적인 스타일링 */
+        }
+
+        @media (max-width: 1400px) {
+            .container {
+                flex-direction: column;
+                /* 세로로 나열하도록 변경 */
+            }
+
+            .left,
+            .right {
+                width: 100%;
+                /* 화면 전체 너비로 설정 */
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #F0F8FF;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#Goll">My Goll</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about" style="background-color: #F0F8FF;">
+
+        <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+        <h1>About Me</h1>
+        <div class="container">
+            <div class="left">
+                <img src="face.png" style="width: 500px; height: 360px;">
+            </div>
+            <div class="right" style="margin-top: 50px; font-size:larger;">
+                <p>Name : 오동용</p>
+                <p>Email : class.ohdong@gmail.com</p>
+                <p>Phone : 010-4097-5082</p>
+                <p>Address : 경상북도 영천시</p>
+                <a>Blog : <a href="https://blog.naver.com/east_dragon_">www.blog.naver.com/east_dragon_</a><br></p>
+                    <a>GIT : <a href="https://github.com/danny5082">https://github.com/danny5082</a>
+                        <br><br>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left">
+                <h2>Certificate</h2>
+                <table style="font-size: larger;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;font-weight: bold;">정보처리기사</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;font-weight: bold;">SQLD</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;font-weight: bold;">컴퓨터활용능력 1급</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;font-weight: bold;">1종대형 운전면허</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;font-weight: bold;">3D프린터활용자격증</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="width: 400px; height: 400px;" class="right">
+                <h2>Core Competencies</h2>
+                <canvas id="radarChart"></canvas>
+            </div>
+        </div>
+        <div style="margin-left: 25px;">
+            <h2 style="margin-left: 100px;">Skills</h2>
+            <div style="margin-left: 100px; margin-right: 100px;" class="progress " role="progressbar"
+                aria-label="Success example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" style="width: 80%"> C# : 80%</div>
+            </div><br>
+            <div style="margin-left: 100px; margin-right: 100px;" class="progress " role="progressbar"
+                aria-label="Info example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" style="width: 80%">SQL : 80%</div>
+            </div><br>
+            <div style="margin-left: 100px; margin-right: 100px;" class="progress " role="progressbar"
+                aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-warning text-dark" style="width: 75%">html5 : 75%</div>
+            </div><Br>
+            <div style="margin-left: 100px; margin-right: 100px;" class="progress " role="progressbar"
+                aria-label="Warning example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-warning text-dark" style="width: 60%">github : 60%</div>
+            </div><Br>
+            <div style="margin-left: 100px; margin-right: 100px;;" class="progress " role="progressbar"
+                aria-label="Danger example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-warning text-dark" style="width: 60%">Linux : 60%</div>
+            </div><br>
+            <div style="margin-left: 100px; margin-right: 100px;;" class="progress " role="progressbar"
+                aria-label="Danger example" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-danger" style="width: 40%">Bootstrap : 40%</div>
+            </div><br>
+        </div>
+    </section>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <section id="Goll" style="background-color: #f0f8ff; margin-top: 50px;">
+        <h1>My Goll</h1>
+        <div>
+            <table style="text-align: center; margin-left: 70px; margin-right: 70px; border-collapse: collapse; border: 2px solid #444444;">
+                <colgroup>
+                    <col style="width: 11.11%; border-right: 1px solid #444444;">
+                    <col style="width: 11.11%; border-right: 1px solid #444444;">
+                    <col style="width: 11.11%; border-right: 2px solid #444444;">
+                    <col style="width: 11.11%; border-right: 1px solid #444444;">
+                    <col style="width: 11.11%; border-right: 1px solid #444444;">
+                    <col style="width: 11.11%; border-right: 2px solid #444444;">
+                    <col style="width: 11.11%; border-right: 1px solid #444444;">
+                    <col style="width: 11.11%; border-right: 1px solid #444444;">
+                    <col style="width: 11.11%;">
+                </colgroup>
+                <tr style="border-bottom: 1px solid #444444;">
+                    <td style="height: 40px;">목표 점수 취득까지 계속 도전해보기</td>
+                    <td style="height: 40px;">내목소리 녹음하고 들어보기</td>
+                    <td style="height: 40px;">수업끝나고 1시간 복습하기</td>
+                    <td style="height: 40px;">C#언어 코테연습 꾸준히 하기</td>
+                    <td style="height: 40px;">미니프로젝트 준비 철저히</td>
+                    <td style="height: 40px;">상담내용 시록하고 정리하기</td>
+                    <td style="height: 40px;">하루지출 1.5만원 이하</td>
+                    <td style="height: 40px;">점심에는 학식먹기</td>
+                    <td style="height: 40px;">국민취업지원제도</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #444444;">
+                    <td style="height: 40px;">-</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">어학성적</td>
+                    <td style="height: 40px;">주말에는 한주 배운내용 전체 복습</td>
+                    <td style="height: 40px;">채용공고 정리하기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">스마트팩토리</td>
+                    <td style="height: 40px;">쉬는시간마다 머리식히고 허리 펴주기</td>
+                    <td style="height: 40px;">옷이나 생필품 계획에 따른 지출하기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">자산관리</td>
+                    <td style="height: 40px;">훈련장려금</td>
+                </tr>
+                <tr style="border-bottom: 2px solid #444444;" >
+                    <td style="height: 40px;">발음연습 꾸준히 하기</td>
+                    <td style="height: 40px;">영단어 암기</td>
+                    <td style="height: 40px;">토익스피킹 후기 많이 찾아보고 공부방법 정리</td>
+                    <td style="height: 40px;">선배님들 이력서 분석하기</td>
+                    <td style="height: 40px;">부족한점 파악하고 매꾸기</td>
+                    <td style="height: 40px;">상위10% 유지하기</td>
+                    <td style="height: 40px;">옷살때 직장에서 입을수 있는 단정한 옷 사기</td>
+                    <td style="height: 40px;">적금 다시 시작해보기</td>
+                    <td style="height: 40px;">-</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #444444;" >
+                    <td style="height: 40px;">노션</td>
+                    <td style="height: 40px;">프로그래머스</td>
+                    <td style="height: 40px;">사람인 이력서 자주 수정하기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">어학성적</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">스마트팩토리</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">자산관리</td>
+                    <td style="height: 40px;">네이버 증권 테마별 탐색</td>
+                    <td style="height: 40px;">IT동향 파악</td>
+                    <td style="height: 40px;">관련행사 파악</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #444444;" >
+                    <td style="height: 40px;">증명사진 준비</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">취업 준비</td>
+                    <td style="height: 40px;">자소서 컨펌받기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">취업 준비</td>
+                    <td style="height: 40px; background-color: #374d9a; color: white; font-weight: bold; font-size: large;">건강한 ICT개발자 되기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">기업분석</td>
+                    <td style="height: 40px;">선배들의 조언 귀담아 듣기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">기업분석</td>
+                    <td style="height: 40px;">뉴스보기</td>
+                </tr>
+                <tr style="border-bottom: 2px solid #444444;" >
+                    <td style="height: 40px;">성적증명서 및 각종 서류 준비</td>
+                    <td style="height: 40px;">면접 연습하기</td>
+                    <td style="height: 40px;">역량검사하기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">인간관계</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">습관</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">역량강화</td>
+                    <td style="height: 40px;">현직자 유튜브 찾아보기</td>
+                    <td style="height: 40px;">10월부터 서류지원 하기</td>
+                    <td style="height: 40px;">멘토님말에 집중하기</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #444444;" >
+                    <td style="height: 40px;">전달력 좋은 말하기 연습하기</td>
+                    <td style="height: 40px;">배려하는 마음을 항상 가지기</td>
+                    <td style="height: 40px;">상대방을 존중하는 습관 가지기</td>
+                    <td style="height: 40px;">아침샤워하기</td>
+                    <td style="height: 40px;">아침운동 주 3회 이상 하기</td>
+                    <td style="height: 40px;">1시이전 취침하기</td>
+                    <td style="height: 40px;">리눅스마스터 2급</td>
+                    <td style="height: 40px;">빅데이터 분석기사</td>
+                    <td style="height: 40px;">평일에는 빠지지 않고 블로기에 기록하기</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #444444;" >
+                    <td style="height: 40px;">나이에 상관없이 배울점을 찾기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">인간관계</td>
+                    <td style="height: 40px;">상대방이 하는말 귀담아 듣기</td>
+                    <td style="height: 40px;">최소 20분 일찍 약속장소 도착하기</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">습관</td>
+                    <td style="height: 40px;">7시 기상</td>
+                    <td style="height: 40px;">ADSP</td>
+                    <td style="height: 40px; background-color: #758bdd	; font-size: large">역량강화</td>
+                    <td style="height: 40px;">깃허브에 꾸준히 기록하기</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #444444;" >
+                    <td style="height: 40px;">상대방이 말하고자하는 목표 파악하기</td>
+                    <td style="height: 40px;">유익하고 긍정적인 관계로 이끌어가기</td>
+                    <td style="height: 40px;">오만하거나 성급해하지 않기</td>
+                    <td style="height: 40px;">짧은시간 취미활동을 가져 머리 식히기</td>
+                    <td style="height: 40px;">주말에 재정비하기</td>
+                    <td style="height: 40px;">하루에 커피는 한잔이하로 마시기</td>
+                    <td style="height: 40px;">공부하는 습관 가지기</td>
+                    <td style="height: 40px;">클린코드, 오브젝트 등 개발자에게 필요한 책 읽고 정리하기</td>
+                    <td style="height: 40px;">데이터시트, Docs 보는방법 연습하기</td>
+                </tr>
+                
+            </table>
+            
+        </div>
+    </section>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+    <section id="portfolio" style="background-color: #F0F8FF; margin-top: 50px;">
+        <br>
+        <h1>Portfolio</h1>
+        <!------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="container">
+            <div class="left">
+                <h2>Project 1</h2>
+                <p>미니 스카다 : Smart PC Factory 프로그램</p>
+                <p>Git : <a
+                        href="https://github.com/danny5082/miniproject_1 ">https://github.com/danny5082/miniproject_1
+                    </a></p>
+
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PPknNwjR5Vo?si=1LRE6D5uF5Rg2oyY"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="right" style="margin-top: 50px;">
+                <table>
+                    <tr>
+                        <td style="width: 130px;">프로그램주제 :</td>
+                        <td> C# Oracle DB를 활용한 PC공정과정 시각화, 분석및 통계</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">기획 및 설계 :</td>
+                        <td>Oracle Db 연동<br>
+                            주문번호, 주문 부품, 주문 로그, 부품 재고 등을 테이블로 구성<br>
+                            공정 로봇들의 과부하에 따라 공정 휴식 및 재가동
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">소켓 통신 :</td>
+                        <td>서버, 클라이언트를 구성하고 소켓 통신을 이용해 고객 주문, 주문 확인 기능 구현<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>통계 :</td>
+                        <td>DB 테이블을 비교와 현황파악을 보기쉽게 표와 차트를 이용하여 시각화</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">UI설계 :</td>
+                        <td> 공정의 과정과 을 애니메이션으로 시각화<br>
+                            자동화 공정 로봇들의 과부하정도를 원형 프로그레스바로 시각화하여 표현</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">담당업무 : </td>
+                        <td>유스케이스 다이어그램, 명세서 작성<br>
+                            Oracle로 테이블을 구성, C#을 이용해 테이블을 데이터그리드 형태, 차트 형태로 시각화<br>
+                            공정과정을 애니메이션, nuget 페키지를 사용해 원형 프로그래스바를 사용한 과부화 정도 시각화</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">프로젝트 소감 :</td>
+                        <td>JSON 형식 데이터를 객체로 다루지 못한 것이 아쉬웠습니다.</td>
+                    </tr>
+                </table>
+                <br><br>
+                <hr style="width: 1000%; margin-left: -500%;">
+            </div>
+        </div>
+
+
+        <!------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="container">
+            <div class="left">
+                <h2>Project 2</h2>
+                <p>ASP.NET Core MVC : github clone codeboard 웹페이지 </p>
+                <p>Git : <a
+                        href="https://github.com/danny5082/miniproject_2 ">https://github.com/danny5082/miniproject_2
+                    </a></p>
+
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VhB5niEQ7Sw?si=rYDvxkGDPsVKyzZT"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="right">
+                <table>
+                    <tr>
+                        <td style="width: 130px;">프로그램주제 :</td>
+                        <td> 코딩 공유 하고 리뷰할수 있는 블로그를 웹으로 제작한다.</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">기획 및 설계 :</td>
+                        <td>게시글 작성,수정,삭제,검색<br>
+                            일별 게시물 통계 차트 시각화<br>
+                            코드박스 구현(코드만 찾아서 허이라이팅), 다크모드<br>
+                            로그인/회원가입<br>
+                            게시글 댓글 추가,삭제
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">사용기술 :</td>
+                        <td>VisualStudio 2022 (ASP.NET Core MVC)<br>
+                            SSMS, C#, html5, CSS3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">담당업무 :</td>
+                        <td>댓글 작성, 삭제<br>
+                            회원가입, 로그인, 로그아웃<br>
+                            DB연결<br>
+                            작성자, 제목 일부를 검색<br>
+                            차트로 최근 10일간의 글 작성수를 작성자 별로 스택 차트로 표현
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">프로젝트 소감 :</td>
+                        <td>목표했던 기능들은 모두 구현했습니다.<br>
+                            게시들을 작성할 때 코드박스를 UI로 구현하도록 개선하면 좋겠습니다.<br>
+                            댓글작성자만 뎃글을 삭제할수 있도록 권한기능을 추가하면 좋겠습니다.<br>
+                            개시글 카테고리화 등 디테일적인 부분들의 추가가 필요해 보입니다.
+                        </td>
+                    </tr>
+                </table>
+
+
+                <br>
+                <hr style="width: 1000%; margin-left: -500%;">
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    </section>
+    <script>
+        // Radar Chart 데이터 설정
+        var radarData = {
+            labels: ['기술능력', '의사소통', '리더쉽', '사고력', '협력'],
+            datasets: [{
+                label: 'Data',
+                data: [8, 7.5, 8, 8.5, 7],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: '#374d9a',
+                borderWidth: 2
+                
+            }]
+        };
+
+        // Radar Chart 옵션 설정
+        var radarOptions = {
+    scale: {
+        angleLines: {
+            display: false
+        },
+        ticks: {
+            beginAtZero: true,
+            min: 0,
+            max: 10, // 10 대신 9로 변경
+            stepSize: 5,
+            display: false,
+            maxTicksLimit: 2 // 최대 눈금 개수 제한 (여기서는 2로 설정하여 0과 9만 표시)
+        },
+        pointLabels: {
+            display: false // 레이블 숨기기
+        }
+    }
+};
+
+        // Radar Chart 생성
+        var ctx = document.getElementById('radarChart').getContext('2d');
+        var myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: radarData,
+            options: radarOptions
+        });
+    </script>
+</body>
+
+</html>
